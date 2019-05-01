@@ -1,0 +1,68 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='../static/index.css')
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='main') Profile
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        ul.nav.nav
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')
+            a(href='/register') Register
+      section.Animal
+        h2.h2animal Fish
+        table
+          tbody
+            tr
+              td.tdanimal
+                h3.h3animal Nutrition
+                p.panimal
+                  | Pet fish are mainly fed with special food that they sell in aquariums. Flake-shaped foods are a convenient way to feed fish from fish tanks. A very common practice is to stop feeding the fish one day a week. This will ensure that they have a better appetite this will not affect them, in their natural state can go weeks without food.
+                img.imgAnimal(src='http://www.ciudaris.com/blog/wp-content/uploads/departamento-nuevo-ciudaris-peces-mascotas3.jpg', width='300', height='200')
+              td.tdanimal
+                h3.h3animal The necessary things to have a complete aquarium
+                ul
+                  li
+                    | Fish tank: Choose always thinking about the number of fish you want and what kind of fish.
+                  li
+                    | Filter: The filter is essential in our aquarium because it provides a higher quality of water, which is essential for our fish to have good health. Choose one that fits your fish tank.
+                  li
+                    | Lighting: To have a healthy aquarium it is convenient to regulate the hours that we keep it with the light on, ideally, it is about 8 hours a day.
+                  li
+                    | Warming: depend on the species that we think we have in the aquarium, obviously if we think keeping cold water fish we will not need it, although it is recommended especially in winter. If we are going to have tropical species it is mandatory to have one.
+                h3.h3animal Cleaner of the fish tank
+                p
+                  | Depending on your filter you will have to clean your tank in a certain amount of time. Some recommendations to know how much change of water depending on how long you are going to do it: Weekly 10%, Biweekly 15%, Monthly 25%.
+      | 			Click the type of video you want to watch:
+      form.videoF(align='center')
+        button#Fishgame.searchButton(type='submit')
+          | Training
+        button#Fishnut.searchButton(type='submit')
+          | Nutrition
+        button#Fishfun.searchButton(type='submit')
+          | Funny
+    center
+    section.resultados
+      .nav
+        button#pPage(type='submit', style='display:none')
+          | Página anterior
+        button#nPage(type='submit', style='display:none')
+          | Página siguiente
+    script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
+    script(type='text/javascript', src='./static/index.js')

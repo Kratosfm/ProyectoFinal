@@ -1,0 +1,42 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='/static/index.css')
+    script(src= './static/main.js')  
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='main') Profile
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        ul.nav.nav
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')
+            a(href='/register') Register
+  
+  h1 #{name}
+  form(method= 'Post', action='/pet/edit/'+pets._id)
+    #form-group
+      label Name:
+      input.form-control(name='name', type='text', value=pets.name)
+    #form-group
+      label Animal:
+      input.form-control(name='animal', type='text', value=pets.animal)
+    #form-group
+      label Age:
+      input.form-control(name='age', type='text',value=pets.age)
+    br
+    input.btn.btn-primary(type='submit',value='Submit')

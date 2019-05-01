@@ -1,0 +1,35 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='../static/index.css')
+    script(src= './static/jquery.js')  
+    script(src= './static/main.js') 
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='main') Profile
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        if user  
+          a(href='/login') Logout
+        else
+          a(href='/login') Login
+          a(href='/register') Register    
+    br
+    a(href="/anadir"): button +
+    ul.list-group
+      each pets2 in pets
+        li.limypets.list-group-item
+          a(href="/pet/"+pets2._id)= pets2.name

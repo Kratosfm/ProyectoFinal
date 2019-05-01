@@ -1,0 +1,144 @@
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+body{
+	background-color: #baa161;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	margin: 10px;
+	padding: 10px;
+	font-weight: 400;
+}
+
+h1{
+	text-align: center
+	font-family: Arial, sans-serif;
+	font-size: 50px;
+	color: white;
+}
+
+/*Section of animals*/
+.Animal{
+	color: white;
+	text-align: left;
+}
+
+.h2animal{
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 40px;
+	color: white;
+}
+
+.h3animal{
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 25px;
+	color: white;
+}
+.tdanimal{
+	width: 50%;
+}
+
+.panimal{
+	color: white;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color:white;
+	text-align: center;
+}
+
+.Animales2{
+	color: white;
+	text-align: left;
+}
+
+.Animales{
+	padding-right: 450px;
+	padding-left: 30px;
+	text-align: left;
+}
+
+.imgAnimal{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.limypets{
+  border: 2px solid black;
+  padding: 8px;
+}

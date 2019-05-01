@@ -1,0 +1,114 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='../static/index.css')
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='main') Profile
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        ul.nav.nav
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')
+            a(href='/register') Register
+      section.Animal
+        h2.h2animal Dogs
+        table.TableFull
+          tbody
+            tr
+              td.tdanimal
+                h3.h3animal Nutrition
+                table(align='center')
+                  tbody
+                    tr
+                      th Food that can eat
+                      th Toxic food for dogs
+                    tr
+                      td The peanut butter
+                      td Chocolate
+                    tr
+                      td Cooked chicken
+                      td Onions
+                    tr
+                      td Cheese
+                      td Grapes
+                    tr
+                      td Salmon
+                      td Avocado
+                    tr
+                      td Apples
+                      td Raisins
+                    tr
+                      td Eggs
+                      td Alcohol
+                    tr
+                      td Rice
+                      td Coffee
+                    tr
+                      td Carrots
+                      td Macadamia nuts
+                br
+                br
+                center
+                  img(src='https://www.lapatilla.com/wp-content/uploads/2013/05/pug.jpg', width='300', height='200', align='middle')
+              td.tdanimal
+                h3.h3animal What does a cat need?
+                ul
+                  li A place of rest
+                  li The hygienic tray
+                  li A trasportín
+                  li Dish and drinking plate
+                  li Hair brush
+                  li Toys
+                h3.h3animal Vaccination schedule
+                ul
+                  li At 45 days of age: first dose of the vaccine against Parvovirus.
+                  li
+                    | At 9 weeks of age: the second vaccine that will be for protection against canine distemper, Adenovirus type 2, infectious hepatitis C and Leptospirosis. And the second dose of the vaccine against Parvovirus. The vaccine against Coronavirus is optional.
+                  li
+                    | t 12 weeks of age: one dose of the previous vaccine and the third of Parvovirus are repeated.
+                  li
+                    | From 4 months of age: the Rabies vaccine. Repeat annually the pentavalent vaccine (Parvovirus / Distemper / Hepatitis / Parainfluenza / Leptospirosis) and Rabies.
+                h3.h3animal 5 essential commands
+                ul
+                  li
+                    | Sit: This is one of the easiest dog obedience commands to teach, so it’s a good one to start with..
+                  li
+                    | Come: This command can help keep a dog out of trouble, bringing him back to you if you lose grip on the leash or accidentally leave the front door open.
+                  li Down:
+                  li
+                    | Stay:This is an exercise in self-control for your dog, so don’t be discouraged if it takes a while to master, particularly for puppies and high-energy dogs
+                  li
+                    | Leave it:This can help keep your dog safe when his curiosity gets the better of him, like if he smells something intriguing but possibly dangerous on the ground!
+      center
+        | Click the type of video you want to watch:
+      form.videoF(align='center')
+        button#Doggame.searchButton(type='submit')
+          | Training
+        button#Dognut.searchButton(type='submit')
+          | Nutrition
+        button#Dogfun.searchButton(type='submit')
+          | Funny
+    center
+      section.resultados
+      .nav
+        button#pPage(type='submit', style='display:none')
+          | Video anterior
+        button#nPage(type='submit', style='display:none')
+          | Video siguiente
+    script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
+    script(type='text/javascript', src='./static/index.js')

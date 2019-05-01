@@ -1,0 +1,87 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='../static/index.css')
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='main') Profile
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        ul.nav.nav
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')
+            a(href='/register') Register
+      section.Animal
+        h2.h2animal Cats
+        table
+          tbody
+            tr
+              td.tdanimal
+                h3.h3animal Nutrition
+                p.panimal
+                  | It is very common to see that many people give their cat the leftovers of their food, or prepare a plate of special food. Sometimes, he is not aware of the risks of human food in cats. Their dietary needs are different from that of humans since their metabolism is different.
+                  | It is 100% recommended that you feed your cats with special foods for them, in the current market there are many foods that are nutritious and taste good to feed them. Some foods that can be given to your cat as quirks are:
+                ul
+                  li  Cooked chicken or turkey (recommended for when they are sick).
+                  li  Yogur (in very small quantities and not very often).
+                  li  Eggs
+                  li  Food for babies (check that there is no onion or garlic).
+                  li  Bananas.
+                  li  Butter and oil (small amounts in your food).
+                  li  Rice.
+                  li  Cooked vegetables.
+                center
+                  img.imgAnimal(src='https://www.purina.es/gato/purina-one/sites/g/files/mcldtz1856/files/2018-06/Mi_gato_me_muerde%281%29.jpg', width='300', height='200')
+              td.tdanimal
+                h3.h3animal What does a cat need?
+                ul
+                  li A place of rest
+                  li The hygienic tray
+                  li A trasportín
+                  li Dish and drinking plate
+                  li Hair brush
+                  li Toys
+                h3.h3animal Vaccination schedule
+                ul
+                  li 2-3 months of age: feline trivalent
+                  li 4 months: reinforcement of the feline trivalent
+                  li 6 months: rabies and feline leukemia
+                  li Annual: reinforcement of trivalent, leukemia and rabies
+                h3.h3animal How to educate a cat?
+                ul
+                  li
+                    | Do not punish him: To correct a bad behavior or to educate a cat begins by suppressing the scolding and punishments. Spend a little time per day playing or petting your pussycat; interact with him in the way you know he likes.
+                  li
+                    | Give rewards: The other key point of how to educate a cat is to reward him every time he does something right.
+                  li
+                    | Create unpleasant experiences: The third point of how to educate a cat is to make sure that inappropriate actions are unpleasant experiences.
+      p Click the type of video you want to watch:
+      form.videoF(align='center')
+        button#Catgame.searchButton(type='submit')
+          | Excercise
+        button#Catnut.searchButton(type='submit')
+          | Nutrition
+        button#Catfun.searchButton(type='submit')
+          | Funny
+    section.resultados
+    .nav
+      button#pPage(type='submit', style='display:none')
+        | Video anterior
+      button#nPage(type='submit', style='display:none')
+        | Video siguiente
+    script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
+    script(type='text/javascript', src='./static/index.js')

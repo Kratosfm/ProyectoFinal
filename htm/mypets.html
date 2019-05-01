@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>
+			Animal Care
+		</title>
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<header>
+			<h1 align="center">
+				Animal Care
+			</h1>
+		</header>
+		<main>
+			<div class="navbar">
+				<a href="main.html">Profile</a>
+				<a href="mypets.html">My Pets</a>
+				<div class="dropdown">
+					<button class="dropbtn">Animals
+						<i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="gatos.html">Cats</a>
+						<a href="perros.html">Dogs</a>
+						<a href="#">Reptile</a>
+					</div>
+				</div>
+			</div>
+			<form class="videoF"  align="center">
+					<input  id="searcbox" class="searchBox" type="text" placeholder="Nombre del video" />
+					<button type="submit" class="buttonsearch">
+						Buscar
+					</button>
+			</form>
+		</main>
+		<section class="resultados">
+		</section>
+		<div class="nav">
+		<button  id="pPage" type="submit" style="display:none">
+			Página anterior
+		</button>
+		<button id="nPage" type="submit" style="display:none">
+			Página siguiente
+		</button>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+  			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  			crossorigin="anonymous"></script>
+  		<script type="text/javascript" src="./js/index.js"></script>
+	</body>
+</html>
