@@ -36,7 +36,7 @@ html
             tr
               td.tdanimal
                 h3.h3animal Nutrition
-                p.panimal
+                p
                   | It is very common to see that many people give their cat the leftovers of their food, or prepare a plate of special food. Sometimes, he is not aware of the risks of human food in cats. Their dietary needs are different from that of humans since their metabolism is different.
                   | It is 100% recommended that you feed your cats with special foods for them, in the current market there are many foods that are nutritious and taste good to feed them. Some foods that can be given to your cat as quirks are:
                 ul
@@ -73,7 +73,8 @@ html
                     | Give rewards: The other key point of how to educate a cat is to reward him every time he does something right.
                   li
                     | Create unpleasant experiences: The third point of how to educate a cat is to make sure that inappropriate actions are unpleasant experiences.
-      p Click the type of video you want to watch:
+      center
+        p Click the type of video you want to watch:
       form.videoF(align='center')
         button#Catgame.searchButton(type='submit')
           | Excercise
@@ -81,19 +82,20 @@ html
           | Nutrition
         button#Catfun.searchButton(type='submit')
           | Funny
-    section.resultados
-    .nav
-      button#pPage(type='submit', style='display:none')
-        | Video anterior
-      button#nPage(type='submit', style='display:none')
-        | Video siguiente
-    ul.list-group
-      each pets2 in pets
-        if pets2.animal == "Cat"
-          if pets2.public == "Public"
-            li.limypets.list-group-item
-              p= pets2.name
-              p= pets2.age
-              p= pets2.ownername  
+    center
+      section.resultados
+      .nav
+        button#pPage(type='submit', style='display:none')
+          | Video anterior
+        button#nPage(type='submit', style='display:none')
+          | Video siguiente
+      ul.list-group
+        each pets2 in pets
+          if pets2.animal == "Cat"
+            if pets2.public == "Public"
+              li.limypets.list-group-item
+                p= pets2.name
+                p= pets2.age
+                p= pets2.ownername  
     script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
     script(type='text/javascript', src='./static/index.js')

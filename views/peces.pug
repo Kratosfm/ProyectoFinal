@@ -34,7 +34,7 @@ html
             tr
               td.tdanimal
                 h3.h3animal Nutrition
-                p.panimal
+                p
                   | Pet fish are mainly fed with special food that they sell in aquariums. Flake-shaped foods are a convenient way to feed fish from fish tanks. A very common practice is to stop feeding the fish one day a week. This will ensure that they have a better appetite this will not affect them, in their natural state can go weeks without food.
                 img.imgAnimal(src='http://www.ciudaris.com/blog/wp-content/uploads/departamento-nuevo-ciudaris-peces-mascotas3.jpg', width='300', height='200')
               td.tdanimal
@@ -51,7 +51,8 @@ html
                 h3.h3animal Cleaner of the fish tank
                 p
                   | Depending on your filter you will have to clean your tank in a certain amount of time. Some recommendations to know how much change of water depending on how long you are going to do it: Weekly 10%, Biweekly 15%, Monthly 25%.
-      | 			Click the type of video you want to watch:
+      center
+        Click the type of video you want to watch:
       form.videoF(align='center')
         button#Fishgame.searchButton(type='submit')
           | Training
@@ -60,19 +61,19 @@ html
         button#Fishfun.searchButton(type='submit')
           | Funny
     center
-    section.resultados
-      .nav
-        button#pPage(type='submit', style='display:none')
-          | Página anterior
-        button#nPage(type='submit', style='display:none')
-          | Página siguiente
-      ul.list-group
-        each pets2 in pets
-          if pets2.animal == "Fish"
-            if pets2.public == "Public"
-              li.limypets.list-group-item
-                p= pets2.name
-                p= pets2.age
-                p= pets2.ownername  
+      section.resultados
+        .nav
+          button#pPage(type='submit', style='display:none')
+            | Página anterior
+          button#nPage(type='submit', style='display:none')
+            | Página siguiente
+        ul.list-group
+          each pets2 in pets
+            if pets2.animal == "Fish"
+              if pets2.public == "Public"
+                li.limypets.list-group-item
+                  p= pets2.name
+                  p= pets2.age
+                  p= pets2.ownername  
     script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
     script(type='text/javascript', src='./static/index.js')

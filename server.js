@@ -33,6 +33,7 @@ let Pets = require('./js/pets');
 //Bring in user models
 let User = require('./js/user');
 
+
 //Check conecction
 db.once('open',function(){
   console.log('Conected to Mongo');
