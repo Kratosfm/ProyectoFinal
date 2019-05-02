@@ -30,7 +30,7 @@ html
           li(style='float:right')  
             a(href='/register') Register  
   h1 #{name}
-  form(method= 'Post', action='/pet/edit/'+pets._id)
+  form(method= 'Post', action='/edit/'+pets._id)
     #form-group
       label Name:
       input.form-control(name='name', type='text', value=pets.name)

@@ -20,23 +20,16 @@ html
             a(href='gatos') Cats
             a(href='perros') Dogs
             a(href='peces') Fish
-        if user
-          li(style='float:right')  
-            a(href='/logout') Logout
-        else
-          li(style='float:right')
-            a(href='/login') Login
-          li(style='float:right')  
-            a(href='/register') Register  
-  h1 #{name}
-  form(method= 'Post', action='/anadir')
-    #form-group
-      label Name:
-      input.form-control(name='name', type='text')
-    #form-group
-      label Animal:
-      input.form-control(name='animal', type='text')
-    #form-group
-      label Age:
-      input.form-control(name='age', type='text')
-    input.btn.btn-primary(type='submit',value='Submit')
+        li(style='float:right')  
+          a(href='/logout') Logout
+    form(method= 'Post', action='/anadir')
+      #form-group
+        label Name:
+        input.form-control(name='name', type='text')
+      #form-group
+        label Animal:
+        input.form-control(name='animal', type='text')
+      #form-group
+        label Age:
+        input.form-control(name='age', type='text')
+      input.btn.btn-primary(type='submit',value='Submit')

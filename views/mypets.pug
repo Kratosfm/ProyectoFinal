@@ -33,10 +33,27 @@ html
     br
     if user
       p= user.name
+      p= user._id
+      p My Pets
       br     
-    ul.list-group
-      each pets2 in pets
-        li.limypets.list-group-item
-          a(href="/pet/"+pets2._id)= pets2.name
-    if user
-      a(href="/anadir"): button.anadir Add New Pet
+      ul.list-group 
+        each pets2 in pets
+          if user._id == pets2.owner
+            li.limypets.list-group-item
+              p= pets2.name
+              p= pets2.animal
+              p= pets2.age
+              p= pets2.owner
+              a.btn.btn.default.anadir(href='/edit/'+pets2._id) Edit
+              a.btn.btn-danger.delete-pet(href='/mypets',data-id=pets2._id) Delete                
+      form(method= 'Post', action='/anadir')
+        #form-group
+          label Name:
+          input.form-control(name='name', type='text')
+        #form-group
+          label Animal:
+          input.form-control(name='animal', type='text')
+        #form-group
+          label Age:
+          input.form-control(name='age', type='text')
+        input.btn.btn-primary(type='submit',value='Submit')

@@ -10,7 +10,7 @@ $(document).ready(function(){
         window.location.href='/mypets';
       },
       error: function(err){
-        console.log(err); 
+        console.log(err);
       }
     });
   });

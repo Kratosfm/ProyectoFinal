@@ -42,87 +42,8 @@ db.once('open',function(){
 db.on('error',function(err){
   console.log(err);
 })
-app.get("/anadir",function(solicitur,respuesta){
-  respuesta.render('anadir');
-});
 
-//Add Submit Post Route
-app.post("/anadir",function(solicitur,respuesta){
-//  solicitur.checkBody('name','name is required').notEmpty();
-//  solicitur.checkBody('animal','nnimal is required').notEmpty();
-//  solicitur.checkBody('age','age is required').notEmpty();
 
-  //Get errors
-  let errors = solicitur.validationErrors();
-
-  if (errors) {
-    respuesta.render('anadir',{
-      errors: errors
-    });
-  } else {
-
-  }
-
-  let pets = new Pets();
-  pets.name = solicitur.body.name;
-  pets.animal = solicitur.body.animal;
-  pets.age = solicitur.body.age;
-  pets.save(function(err){
-    if(err){
-      console.log(err);
-    } else {
-      solicitur.flash('success','Pet Added');
-      respuesta.redirect("/mypets");
-    }
-  })
-})
-
-//Load Edit form
-app.get("/pet/edit/:id",function(solicitur,respuesta){
-  Pets.findById(solicitur.params.id, function(err, pets){
-    respuesta.render('edit_pet',{
-    pets:pets
-    });
-  });
-});
-
-//Update Submit Post Route
-app.post("/pet/edit/:id",function(solicitur,respuesta){
-  let pets = {};
-  pets.name = solicitur.body.name;
-  pets.animal = solicitur.body.animal;
-  pets.age = solicitur.body.age;
-
-  let query = {_id:solicitur.params.id}
-
-  Pets.update(query,pets,function(err){
-    if(err){
-      console.log(err);
-    } else {
-      //solicitur.flash('success','Pet Update')
-      respuesta.redirect("/mypets");
-    }
-  })
-})
-//Deletee Pet
-app.delete('/pet/:id',function(solicitur,respuesta){
-  let query = {_id:solicitur.params.id}
-  Pets.remove(query, function(err){
-    if (err) {
-      console.log(err);
-    }
-    respuesta.send('Success');
-  });
-});
-
-//Get single pets
-app.get("/pet/:id",function(solicitur,respuesta){
-  Pets.findById(solicitur.params.id, function(err, pets){
-    respuesta.render('pet',{
-    pets:pets
-    });
-  });
-});
 
 //Express session
 app.use(session({
@@ -226,7 +147,7 @@ app.post('/register',function(solicitur,respuesta){
           return;
         } else {
           solicitur.flash('success','You are now registered and can log in');
-          respuesta.redirect('/login');
+          respuesta.redirect('/mypets');
         }
       });
     });
@@ -242,14 +163,11 @@ app.get("/login",function(solicitur,respuesta){
 app.post('/login', function(solicitur, respuesta, next){
   passport.authenticate('local', {
     successRedirect:'/mypets',
-    failureRedirect:'/perros',
+    failureRedirect:'/login',
     failureFlash: true
   })(solicitur, respuesta, next);
 });
 
-
-
-//Get de ventanas
 app.get("/mypets",function(solicitur,respuesta){
   Pets.find({},function(err, pets){
     if (err) {
@@ -263,6 +181,94 @@ app.get("/mypets",function(solicitur,respuesta){
   }
   });
 });
+
+app.get("/anadir",function(solicitur,respuesta){
+  respuesta.render('anadir');
+});
+
+//Add Submit Post Route
+app.post("/anadir",function(solicitur,respuesta){
+//  solicitur.checkBody('name','name is required').notEmpty();
+//  solicitur.checkBody('animal','animal is required').notEmpty();
+//  solicitur.checkBody('age','age is required').notEmpty();
+
+  //Get errors
+  let errors = solicitur.validationErrors();
+
+  if (errors) {
+    respuesta.render('anadir',{
+      errors: errors
+    });
+  } else {
+
+  }
+
+  let pets = new Pets();
+  pets.name = solicitur.body.name;
+  pets.animal = solicitur.body.animal;
+  pets.age = solicitur.body.age;
+  pets.owner= solicitur.user._id;
+  pets.ownername= solicitur.user.name;
+  pets.save(function(err){
+    if(err){
+      console.log(err);
+    } else {
+      solicitur.flash('success','Pet Added');
+      respuesta.redirect("/mypets");
+    }
+  })
+})
+
+//Load Edit form
+app.get("/edit/:id",function(solicitur,respuesta){
+  Pets.findById(solicitur.params.id, function(err, pets){
+    respuesta.render('edit_pet',{
+    pets:pets,
+    });
+  });
+});
+
+//Update Submit Post Route
+app.post("/edit/:id",function(solicitur,respuesta){
+  let pets = {};
+  pets.name = solicitur.body.name;
+  pets.animal = solicitur.body.animal;
+  pets.age = solicitur.body.age;
+//  pets.owner = solicitur.user._id
+
+  let query = {_id:solicitur.params.id}
+
+  Pets.update(query,pets,function(err){
+    if(err){
+      console.log(err);
+    } else {
+      //solicitur.flash('success','Pet Update')
+      respuesta.redirect("/mypets");
+    }
+  })
+})
+//Delete Pet
+app.delete('/pet/:id',function(solicitur,respuesta){
+  let query = {_id:solicitur.params.id}
+  Pets.remove(query, function(err){
+    if (err) {
+      console.log(err);
+    }
+    respuesta.send('Success');
+  });
+});
+
+//Get single pets
+app.get("/pet/:id",function(solicitur,respuesta){
+  Pets.findById(solicitur.params.id, function(err, pets){
+    respuesta.render('pet',{
+    pets:pets,
+    });
+  });
+});
+
+
+//Get de ventanas
 
 
 app.get("/perros",function(solicitur,respuesta){
