@@ -12,7 +12,7 @@ html
         | Animal Care
     main
       .navbar
-        a(href='main') Profile
+        a(href='home') Profile
         a(href='mypets') My Pets
         .dropdown
           button.dropbtn
@@ -22,14 +22,21 @@ html
             a(href='gatos') Cats
             a(href='perros') Dogs
             a(href='peces') Fish
-        if user  
-          a(href='/login') Logout
+        if user
+          li(style='float:right')  
+            a(href='/logout') Logout
         else
-          a(href='/login') Login
-          a(href='/register') Register    
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')  
+            a(href='/register') Register    
     br
-    a(href="/anadir"): button +
+    if user
+      p= user.name
+      br     
     ul.list-group
       each pets2 in pets
         li.limypets.list-group-item
           a(href="/pet/"+pets2._id)= pets2.name
+    if user
+      a(href="/anadir"): button.anadir Add New Pet

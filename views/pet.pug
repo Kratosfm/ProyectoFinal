@@ -12,7 +12,7 @@ html
         | Animal Care
     main
       .navbar
-        a(href='main') Profile
+        a(href='home') Profile
         a(href='mypets') My Pets
         .dropdown
           button.dropbtn
@@ -22,13 +22,17 @@ html
             a(href='gatos') Cats
             a(href='perros') Dogs
             a(href='peces') Fish
-        ul.nav.nav
+        if user
+          li(style='float:right')  
+            a(href='/logout') Logout
+        else
           li(style='float:right')
             a(href='/login') Login
-          li(style='float:right')
+          li(style='float:right')  
             a(href='/register') Register
-    h3= pets.name
-    hr
-    a.btn.btn.default(href='/pet/edit/'+pets._id) Edit
-    br
-    a.btn.btn-danger.delete-pet(href='/mypets',data-id=pets._id) Delete
+  a.btn.btn-primary.back(href='/mypets') Back
+  h3= pets.name
+  br
+  a.btn.btn.default(href='/pet/edit/'+pets._id) Edit
+  br
+  a.btn.btn-danger.delete-pet(href='/mypets',data-id=pets._id) Delete

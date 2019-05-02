@@ -5,6 +5,25 @@ html
     link(rel='stylesheet', href='../static/index.css')
     meta(charset='utf-8')
   body
+    .navbar
+      a(href='home') Profile
+      a(href='mypets') My Pets
+      .dropdown
+        button.dropbtn
+          | Animals
+          i.fa.fa-caret-down
+        .dropdown-content
+          a(href='gatos') Cats
+          a(href='perros') Dogs
+          a(href='peces') Fish
+      if user
+        li(style='float:right')  
+          a(href='/logout') Logout
+      else
+        li(style='float:right')
+          a(href='/login') Login
+        li(style='float:right')  
+          a(href='/register') Register
   h1 Register
   form(method= 'Post', action='/register')
     #form-group

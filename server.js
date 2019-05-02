@@ -48,9 +48,9 @@ app.get("/anadir",function(solicitur,respuesta){
 
 //Add Submit Post Route
 app.post("/anadir",function(solicitur,respuesta){
-  solicitur.checkBody('name','Name is required').notEmpty();
-  solicitur.checkBody('animal','animal is required').notEmpty();
-  solicitur.checkBody('age','age is required').notEmpty();
+//  solicitur.checkBody('name','name is required').notEmpty();
+//  solicitur.checkBody('animal','nnimal is required').notEmpty();
+//  solicitur.checkBody('age','age is required').notEmpty();
 
   //Get errors
   let errors = solicitur.validationErrors();
@@ -99,7 +99,7 @@ app.post("/pet/edit/:id",function(solicitur,respuesta){
     if(err){
       console.log(err);
     } else {
-      solicitur.flash('success','Pet Update')
+      //solicitur.flash('success','Pet Update')
       respuesta.redirect("/mypets");
     }
   })
@@ -285,7 +285,7 @@ app.get("/home",function(solicitur,respuesta){
 app.get('/logout', function(solicitur, respuesta){
   solicitur.logout();
   solicitur.flash('success', 'You are logged out');
-  respuesta.redirect('/users/login');
+  respuesta.redirect('/login');
 });
 
 

@@ -10,7 +10,7 @@ html
         | Animal Care
     main
       .navbar
-        a(href='main') Profile
+        a(href='home') Profile
         a(href='mypets') My Pets
         .dropdown
           button.dropbtn
@@ -20,10 +20,13 @@ html
             a(href='gatos') Cats
             a(href='perros') Dogs
             a(href='peces') Fish
-        ul.nav.nav
+        if user
+          li(style='float:right')  
+            a(href='/logout') Logout
+        else
           li(style='float:right')
             a(href='/login') Login
-          li(style='float:right')
+          li(style='float:right')  
             a(href='/register') Register
       section.Animal
         h2.h2animal Dogs
