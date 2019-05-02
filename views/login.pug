@@ -6,7 +6,6 @@ html
     meta(charset='utf-8')
   body
     .navbar
-      a(href='home') Profile
       a(href='mypets') My Pets
       .dropdown
         button.dropbtn
@@ -24,14 +23,15 @@ html
           a(href='/login') Login
         li(style='float:right')  
           a(href='/register') Register  
-  h1 Login
-  form(method= 'Post', action='/login')
-    #form-group
-      label UserName:
-      input.form-control(name='username', type='text')
-    br
-    #form-group
-      label Password:
-      input.form-control(name='password', type='password')
-    br
-    input.btn.btn-primary(type='submit',value='Submit')
+  main(align='center')
+    h1.log Login
+    form(method= 'Post', action='/login')
+      #form-group
+        label UserName:
+        input.form-control(name='username', type='text')
+      br
+      #form-group
+        label Password:
+        input.form-control(name='password', type='password')
+      br
+      input.btn.btn-primary(type='submit',value='Submit')

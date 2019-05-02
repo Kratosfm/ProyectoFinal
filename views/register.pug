@@ -6,7 +6,6 @@ html
     meta(charset='utf-8')
   body
     .navbar
-      a(href='home') Profile
       a(href='mypets') My Pets
       .dropdown
         button.dropbtn
@@ -24,26 +23,27 @@ html
           a(href='/login') Login
         li(style='float:right')  
           a(href='/register') Register
-  h1 Register
-  form(method= 'Post', action='/register')
-    #form-group
-      label Name:
-      input.form-control(name='name', type='text')
-    br
-    #form-group
-      label Email:
-      input.form-control(name='email', type='text')
-    br
-    #form-group
-      label UserName:
-      input.form-control(name='username', type='text')
-    br
-    #form-group
-      label Password:
-      input.form-control(name='password', type='password')
-    br
-    #form-group
-      label Confirm:
-      input.form-control(name='password2', type='password')
-    br
-    input.btn.btn-primary(type='submit',value='Submit')
+  main(align='center')
+    h1.log Register
+    form(method= 'Post', action='/register')
+      #form-group
+        label Name:
+        input.form-control(name='name', type='text')
+      br
+      #form-group
+        label Email:
+        input.form-control(name='email', type='text')
+      br
+      #form-group
+        label UserName:
+        input.form-control(name='username', type='text')
+      br
+      #form-group
+        label Password:
+        input.form-control(name='password', type='password')
+      br
+      #form-group
+        label Confirm:
+        input.form-control(name='password2', type='password')
+      br
+      input.btn.btn-primary(type='submit',value='Submit')

@@ -12,7 +12,6 @@ html
         | Animal Care
     main
       .navbar
-        a(href='home') Profile
         a(href='mypets') My Pets
         .dropdown
           button.dropbtn
@@ -32,31 +31,35 @@ html
             a(href='/register') Register    
     br
     if user
-      p= user.name
-      p= user._id
-      p My Pets
+      p.pName(align='center')= user.name
+      p.pName(align='center') My Pets
       br     
-      ul.list-group 
+      al.list-group(align='center')
         each pets2 in pets
           if user._id == pets2.owner
             li.limypets.list-group-item
               p= pets2.name
               p= pets2.animal
               p= pets2.age
-              p= pets2.owner
+              p= pets2.public
               a.btn.btn.default.anadir(href='/edit/'+pets2._id) Edit
-              a.btn.btn-danger.delete-pet(href='/mypets',data-id=pets2._id) Delete                
-      form(method= 'Post', action='/anadir')
+              a.btn.btn-danger.delete-pet(href='/mypets',data-id=pets2._id) Delete             
+      form(align='center',method= 'Post', action='/anadir')
         #form-group
           label Name:
+          br
           input.form-control(name='name', type='text')
         #form-group
           label Animal:
+          br
           input.form-control(name='animal', type='text')
         #form-group
           label Age:
+          br
           input.form-control(name='age', type='text')
         #form-group
           label Public or Private?:
-          input.form-control(name='public', type='text')
+          br
+          input.checkbox(name='public', type='boolean')
+        br
         input.btn.btn-primary(type='submit',value='Submit')

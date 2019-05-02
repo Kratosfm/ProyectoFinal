@@ -11,7 +11,6 @@ html
         | Animal Care
     main
       .navbar
-        a(href='home') Profile
         a(href='mypets') My Pets
         .dropdown
           button.dropbtn
@@ -29,8 +28,8 @@ html
             a(href='/login') Login
           li(style='float:right')  
             a(href='/register') Register  
-  h1 #{name}
-  form(method= 'Post', action='/edit/'+pets._id)
+  h2(align = 'center') Edit Pet
+  form(align = 'center', method= 'Post', action='/edit/'+pets._id)
     #form-group
       label Name:
       input.form-control(name='name', type='text', value=pets.name)
@@ -40,5 +39,8 @@ html
     #form-group
       label Age:
       input.form-control(name='age', type='text',value=pets.age)
+    #form-group
+      label Public:
+      input.form-control(name='public', type='text',value=pets.public)
     br
     input.btn.btn-primary(type='submit',value='Submit')

@@ -70,7 +70,7 @@
 
 
 body{
-	background-color: #baa161;
+	background-color: #b2b2a0	;
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 	margin: 10px;
@@ -87,7 +87,6 @@ h1{
 
 /*Section of animals*/
 .Animal{
-	color: white;
 	text-align: left;
 }
 
@@ -109,7 +108,6 @@ h1{
 }
 
 .panimal{
-	color: white;
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 	color:white;
@@ -117,7 +115,6 @@ h1{
 }
 
 .Animales2{
-	color: white;
 	text-align: left;
 }
 
@@ -183,3 +180,26 @@ table, th, td {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.pName{
+  color: white;
+  font-size: 32px;
+}
+
+.log{
+  color: black;
+}
+
+.btn-primary{
+  color: black;
+  border: 2px solid black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.bch

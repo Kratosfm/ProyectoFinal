@@ -95,7 +95,7 @@ app.get('/', function(req, res){
     if(err){
       console.log(err);
     } else {
-      res.render('main', {
+      res.render('login', {
         name:'Pets',
         pets: pets
       });
@@ -235,6 +235,7 @@ app.post("/edit/:id",function(solicitur,respuesta){
   pets.name = solicitur.body.name;
   pets.animal = solicitur.body.animal;
   pets.age = solicitur.body.age;
+  pets.public = solicitur.body.public;
 //  pets.owner = solicitur.user._id
 
   let query = {_id:solicitur.params.id}
@@ -314,8 +315,19 @@ app.get("/peces",function(solicitur,respuesta){
   });
 });
 
-app.get("/home",function(solicitur,respuesta){
-  respuesta.render('main');
+app.get("/buscar",function(solicitur,respuesta){
+  Pets.find({},function(err, pets){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      respuesta.render('buscar',{
+      name:'Pets',
+      pets:pets,
+      res:respuesta
+    });
+  }
+  });
 });
 
 //Logout

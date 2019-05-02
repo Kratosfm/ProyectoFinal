@@ -1,0 +1,52 @@
+html
+  head
+    title
+      | Animal Care
+    link(rel='stylesheet', href='../static/index.css')
+    script(src= './static/jquery.js')  
+    script(src= './static/main.js') 
+    meta(charset='utf-8')
+  body
+    header
+      h1(align='center')
+        | Animal Care
+    main
+      .navbar
+        a(href='mypets') My Pets
+        .dropdown
+          button.dropbtn
+            | Animals
+            i.fa.fa-caret-down
+          .dropdown-content
+            a(href='gatos') Cats
+            a(href='perros') Dogs
+            a(href='peces') Fish
+        a(href='buscar') Search
+        if user
+          li(style='float:right')  
+            a(href='/logout') Logout
+        else
+          li(style='float:right')
+            a(href='/login') Login
+          li(style='float:right')  
+            a(href='/register') Register 
+      br 
+      
+      script.
+        function myFunction() {
+        var x = document.getElementById("mySearch").value;
+        document.getElementById("demo").innerHTML = x;
+        }
+      
+      section(align='center')
+        input#mySearch(type='search', placeholder='Search for something..')
+        button(onclick='myFunction()') Search
+        ul.list-group
+          each pets2 in pets
+            if pets2.animal == id="demo"
+              if pets2.public == "Public"
+                li.limypets.list-group-item
+                  p= pets2.name
+                  p= pets2.animal
+                  p= pets2.age
+                  p= pets2.ownername  
