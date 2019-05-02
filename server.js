@@ -209,6 +209,7 @@ app.post("/anadir",function(solicitur,respuesta){
   pets.age = solicitur.body.age;
   pets.owner= solicitur.user._id;
   pets.ownername= solicitur.user.name;
+  pets.public= solicitur.body.public;
   pets.save(function(err){
     if(err){
       console.log(err);
@@ -272,15 +273,45 @@ app.get("/pet/:id",function(solicitur,respuesta){
 
 
 app.get("/perros",function(solicitur,respuesta){
-  respuesta.render('perros');
+  Pets.find({},function(err, pets){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      respuesta.render('perros',{
+      name:'Pets',
+      pets:pets
+    });
+  }
+  });
 });
 
 app.get("/gatos",function(solicitur,respuesta){
-  respuesta.render('gatos');
+  Pets.find({},function(err, pets){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      respuesta.render('gatos',{
+      name:'Pets',
+      pets:pets
+    });
+  }
+  });
 });
 
 app.get("/peces",function(solicitur,respuesta){
-  respuesta.render('peces');
+  Pets.find({},function(err, pets){
+    if (err) {
+      console.log(err);
+    }
+    else {
+      respuesta.render('peces',{
+      name:'Pets',
+      pets:pets
+    });
+  }
+  });
 });
 
 app.get("/home",function(solicitur,respuesta){

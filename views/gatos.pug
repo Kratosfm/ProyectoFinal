@@ -88,5 +88,14 @@ html
         | Video anterior
       button#nPage(type='submit', style='display:none')
         | Video siguiente
+    ul.list-group
+      each pets2 in pets
+        if pets2.animal == "Cat"
+          if pets2.public == "Public"
+            li.limypets.list-group-item
+              p= pets2.name
+              p= pets2.animal
+              p= pets2.age
+              p= pets2.ownername  
     script(src='https://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
     script(type='text/javascript', src='./static/index.js')

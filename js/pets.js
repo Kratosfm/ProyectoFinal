@@ -21,6 +21,10 @@ let petSchema = mongoose.Schema({
     type: String,
     require: true
   },
+  public:{
+    type: String,
+    require: true
+  }
 });
 
 let Pet = module.exports = mongoose.model('Pet', petSchema,'pets');
